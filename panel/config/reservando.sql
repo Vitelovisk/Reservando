@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 17-07-2023 a las 18:47:18
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Host: localhost
+-- Tempo de geração: 27/11/2023 às 05:46
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,36 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `reserva`
+-- Banco de dados: `reservando`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cargo`
+-- Estrutura para tabela `brindes`
+--
+
+CREATE TABLE `brindes` (
+  `id_brinde` int(11) NOT NULL,
+  `cod_brinde` varchar(255) NOT NULL,
+  `status_brinde` varchar(255) NOT NULL,
+  `usuario_idu` int(11) NOT NULL,
+  `dataHoraCadastro` datetime DEFAULT NULL,
+  `dataHoraColeta` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+--
+-- Despejando dados para a tabela `brindes`
+--
+
+INSERT INTO `brindes` (`id_brinde`, `cod_brinde`, `status_brinde`, `usuario_idu`, `dataHoraCadastro`, `dataHoraColeta`) VALUES
+(53, '55543924', '2', 9, '2023-11-26 22:59:14', '2023-11-26 23:12:20'),
+(55, '16328663', '1', 9, '2023-11-26 23:14:23', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `cargo`
 --
 
 CREATE TABLE `cargo` (
@@ -33,7 +56,7 @@ CREATE TABLE `cargo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
--- Volcado de datos para la tabla `cargo`
+-- Despejando dados para a tabela `cargo`
 --
 
 INSERT INTO `cargo` (`idc`, `ncargo`) VALUES
@@ -43,7 +66,7 @@ INSERT INTO `cargo` (`idc`, `ncargo`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `estado`
+-- Estrutura para tabela `estado`
 --
 
 CREATE TABLE `estado` (
@@ -52,7 +75,7 @@ CREATE TABLE `estado` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
--- Volcado de datos para la tabla `estado`
+-- Despejando dados para a tabela `estado`
 --
 
 INSERT INTO `estado` (`id_status`, `status`) VALUES
@@ -61,11 +84,10 @@ INSERT INTO `estado` (`id_status`, `status`) VALUES
 (3, 'FINALIZADO'),
 (4, 'NÃO COMPARECEU');
 
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `horario`
+-- Estrutura para tabela `horario`
 --
 
 CREATE TABLE `horario` (
@@ -75,7 +97,7 @@ CREATE TABLE `horario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
--- Volcado de datos para la tabla `horario`
+-- Despejando dados para a tabela `horario`
 --
 
 INSERT INTO `horario` (`idHorario`, `tempo`, `hora`) VALUES
@@ -102,7 +124,7 @@ INSERT INTO `horario` (`idHorario`, `tempo`, `hora`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `mesa`
+-- Estrutura para tabela `mesa`
 --
 
 CREATE TABLE `mesa` (
@@ -111,7 +133,7 @@ CREATE TABLE `mesa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
--- Volcado de datos para la tabla `mesa`
+-- Despejando dados para a tabela `mesa`
 --
 
 INSERT INTO `mesa` (`idm`, `quantidade`) VALUES
@@ -120,7 +142,7 @@ INSERT INTO `mesa` (`idm`, `quantidade`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `reserva`
+-- Estrutura para tabela `reserva`
 --
 
 CREATE TABLE `reserva` (
@@ -131,21 +153,26 @@ CREATE TABLE `reserva` (
   `hora` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `comentario` varchar(1500) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `estado_id_status` int(11) NOT NULL,
-  `usuario_idu` int(11) NOT NULL
+  `usuario_idu` int(11) NOT NULL,
+  `dataHoraCadastro` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
--- Volcado de datos para la tabla `reserva`
+-- Despejando dados para a tabela `reserva`
 --
 
-INSERT INTO `reserva` (`idr`, `quantidade`, `fechar`, `tipo`, `hora`, `comentario`, `estado_id_status`, `usuario_idu`) VALUES
-(1, 6, '2023-05-22', 'Almoco', '13:30', 'Descripcionn nuevo', 3, 2),
-(6, 15, '2023-07-17', 'Almoco', '02:30 PM', 'Holaaaa', 3, 8);
+INSERT INTO `reserva` (`idr`, `quantidade`, `fechar`, `tipo`, `hora`, `comentario`, `estado_id_status`, `usuario_idu`, `dataHoraCadastro`) VALUES
+(26, 3, '2023-11-27', 'Almoco', '12:00 PM', 'Teste', 3, 9, '2023-11-26 22:55:44'),
+(27, 3, '2023-11-27', 'Almoco', '12:30 PM', 'teste2', 3, 9, '2023-11-26 22:55:55'),
+(28, 3, '2023-11-27', 'Jantar', '09:00 PM', 'teste3', 3, 9, '2023-11-26 22:56:03'),
+(29, 3, '2023-11-27', 'Almoco', '12:00 PM', 'adasdadasdadas', 3, 9, '2023-11-26 23:13:21'),
+(30, 3, '2023-11-27', 'Almoco', '12:00 PM', 't1xcasdc2', 3, 9, '2023-11-26 23:13:34'),
+(31, 3, '2023-11-27', 'Almoco', '12:00 PM', '1312xcsd', 3, 9, '2023-11-26 23:13:40');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuario`
+-- Estrutura para tabela `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -164,12 +191,12 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
--- Volcado de datos para la tabla `usuario`
+-- Despejando dados para a tabela `usuario`
 --
 
 INSERT INTO `usuario` (`id`, `nomes`, `apelidos`, `dni`, `numero`, `fecha`, `email`, `direcao`, `password`, `pontos`, `estado_usuario`, `cargo_idc`) VALUES
-(1, 'Sofia', 'sof', 0, '984249222', '30/08/1997', 'admin@gmail.com', 'Jvlee', '7c4a8d09ca3762af61e59520943dc26494f8941b', 0, 'ACTIVO', 1),
-(9, 'Mariana', 'Mari', 0, '984249222', '30/08/1997', 'cliente@gmail.com', 'Jvlee', '7c4a8d09ca3762af61e59520943dc26494f8941b', 0, 'ACTIVO', 2),
+(1, 'Vitor', 'Vitelo', 0, '984249222', '30/08/1997', 'admin@gmail.com', 'Jvlee', '7c4a8d09ca3762af61e59520943dc26494f8941b', 0, 'ACTIVO', 1),
+(9, 'Mariana', 'Mari', 0, '984249222', '30/08/1997', 'cliente@gmail.com', 'Jvlee', '7c4a8d09ca3762af61e59520943dc26494f8941b', 420, 'ACTIVO', 2),
 (10, 'Lucas', 'Lu', 71985652, '984249222', '2000-02-16', 'estefany@gmail.com', 'Jvlee', '7c4a8d09ca3762af61e59520943dc26494f8941b', 10, 'ACTIVO', 2),
 (11, 'Gabriela', 'Gabi', 71985653, '984249222', '1997-07-16', 'julio@gmail.com', 'Jvlee', '7c4a8d09ca3762af61e59520943dc26494f8941b', 30, 'ACTIVO', 2),
 (12, 'Rafael', 'Rafa', 0, '984249222', '30/08/1997', 'cliente@gmail.com', 'Jvlee', '7c4a8d09ca3762af61e59520943dc26494f8941b', 0, 'ACTIVO', 2),
@@ -178,39 +205,45 @@ INSERT INTO `usuario` (`id`, `nomes`, `apelidos`, `dni`, `numero`, `fecha`, `ema
 (15, 'Carolina', 'Carol', 0, '984249222', '30/08/1997', 'cliente@gmail.com', 'Jvlee', '7c4a8d09ca3762af61e59520943dc26494f8941b', 0, 'ACTIVO', 2),
 (16, 'Pedro', 'Peu', 71985652, '984249222', '2000-02-16', 'estefany@gmail.com', 'Jvlee', '7c4a8d09ca3762af61e59520943dc26494f8941b', 10, 'ACTIVO', 2),
 (17, 'Leticia', 'Leti', 71985653, '984249222', '1997-07-16', 'julio@gmail.com', 'Jvlee', '7c4a8d09ca3762af61e59520943dc26494f8941b', 30, 'ACTIVO', 2),
-(18, 'Diego', 'Di', 0, '984249222', '30/08/1997', 'cliente@gmail.com', 'Jvlee', '7c4a8d09ca3762af61e59520943dc26494f8941b', 0, 'ACTIVO', 2);
-
-
---
--- Índices para tablas volcadas
---
+(18, 'Diego', 'Di', 0, '984249222', '30/08/1997', 'cliente@gmail.com', 'Jvlee', '7c4a8d09ca3762af61e59520943dc26494f8941b', 0, 'ACTIVO', 2),
+(0, 'Vitor', 'Vitelo', 2147483647, '3123124124', '2002-05-28', 'hojejer128@dpsols.com', 'kajsdiqwjd918yn', '7c4a8d09ca3762af61e59520943dc26494f8941b', 10, 'ACTIVO', 2);
 
 --
--- Indices de la tabla `cargo`
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices de tabela `brindes`
+--
+ALTER TABLE `brindes`
+  ADD PRIMARY KEY (`id_brinde`);
+
+--
+-- Índices de tabela `cargo`
 --
 ALTER TABLE `cargo`
   ADD PRIMARY KEY (`idc`);
 
 --
--- Indices de la tabla `estado`
+-- Índices de tabela `estado`
 --
 ALTER TABLE `estado`
   ADD PRIMARY KEY (`id_status`);
 
 --
--- Indices de la tabla `horario`
+-- Índices de tabela `horario`
 --
 ALTER TABLE `horario`
   ADD PRIMARY KEY (`idHorario`);
 
 --
--- Indices de la tabla `mesa`
+-- Índices de tabela `mesa`
 --
 ALTER TABLE `mesa`
   ADD PRIMARY KEY (`idm`);
 
 --
--- Indices de la tabla `reserva`
+-- Índices de tabela `reserva`
 --
 ALTER TABLE `reserva`
   ADD PRIMARY KEY (`idr`),
@@ -218,69 +251,20 @@ ALTER TABLE `reserva`
   ADD KEY `fk_solicitud_usuario1_idx` (`usuario_idu`);
 
 --
--- Indices de la tabla `usuario`
---
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email_UNIQUE` (`email`),
-  ADD KEY `fk_usuario_cargo_idx` (`cargo_idc`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
--- AUTO_INCREMENT de la tabla `cargo`
+-- AUTO_INCREMENT de tabela `brindes`
 --
-ALTER TABLE `cargo`
-  MODIFY `idc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `brindes`
+  MODIFY `id_brinde` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
--- AUTO_INCREMENT de la tabla `estado`
---
-ALTER TABLE `estado`
-  MODIFY `id_status` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT de la tabla `horario`
---
-ALTER TABLE `horario`
-  MODIFY `idHorario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
-
---
--- AUTO_INCREMENT de la tabla `mesa`
---
-ALTER TABLE `mesa`
-  MODIFY `idm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT de la tabla `reserva`
+-- AUTO_INCREMENT de tabela `reserva`
 --
 ALTER TABLE `reserva`
-  MODIFY `idr` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT de la tabla `usuario`
---
-ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `reserva`
---
-ALTER TABLE `reserva`
-  ADD CONSTRAINT `fk_solicitud_estado1` FOREIGN KEY (`estado_id_status`) REFERENCES `estado` (`id_status`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_solicitud_usuario1` FOREIGN KEY (`usuario_idu`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `usuario`
---
-ALTER TABLE `usuario`
-  ADD CONSTRAINT `fk_usuario_cargo` FOREIGN KEY (`cargo_idc`) REFERENCES `cargo` (`idc`) ON DELETE CASCADE ON UPDATE CASCADE;
+  MODIFY `idr` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

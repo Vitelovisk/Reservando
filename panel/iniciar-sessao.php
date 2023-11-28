@@ -10,7 +10,7 @@
 		$password = $_POST['password'];
 		
 		$sql = "SELECT id, password, nomes, apelidos, cargo_idc FROM usuario WHERE email='$usuario'";
-		echo $sql;
+		// echo $sql;
 		$resultado = $mysqli->query($sql);
 		$num = $resultado->num_rows;
 		

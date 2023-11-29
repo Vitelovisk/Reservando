@@ -156,7 +156,7 @@
                                 </div>
                                 <form action="controlador/editarReserva.php" method="POST">
                                         <?php
-                                            include ('config/Conexao.php');
+                                            include ('config/conexao.php');
 
                                             $sql = "SELECT * FROM reserva WHERE idr =".$_GET['id'];
                                             $resultado = $Conexao->query($sql);

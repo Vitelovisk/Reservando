@@ -4,9 +4,9 @@ date_default_timezone_set('America/Sao_Paulo');
 session_start();
 
 // Suas informações de conexão com o banco de dados
-$host = "localhost";
-$user = "root";
-$pass = "";
+$host = "aws-reservando-db-mysql.c9joiyhrzm9x.sa-east-1.rds.amazonaws.com";
+$user = "admin";
+$pass = "yqN5ZbUGwb5K564N2koi";
 $db = "reservando";
 
 // Estabelecendo a conexão com o banco de dados

@@ -156,7 +156,7 @@
                                 </div>
                                 <form action="controlador/editarEstado.php" method="POST">
                                         <?php
-                                            include ('config/Conexao.php');
+                                            include ('config/conexao.php');
                                             $idR =$_GET['id'];
                                             $estado = $_GET['estado'];
                                             $user = $_GET['user'];

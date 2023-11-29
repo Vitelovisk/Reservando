@@ -1,6 +1,6 @@
 <?php
 
-include("../config/conexao.php");
+include("../config/Conexao.php");
 
 $quantidade = $_POST['quantidade'];
 $fecha = $_POST['fecha'];

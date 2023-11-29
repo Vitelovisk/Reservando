@@ -160,7 +160,7 @@
                                 </div>
                                 <form action="controlador/editarUsuario.php" method="POST">
                                         <?php
-                                            include ('config/conexao.php');
+                                            include ('config/Conexao.php');
 
                                             $sql = "SELECT * FROM usuario WHERE id = '$id'";
                                             $resultado = $Conexao->query($sql);

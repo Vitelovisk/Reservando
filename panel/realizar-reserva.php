@@ -158,7 +158,7 @@
                                     <div class="form-group row">
                                         <div class="col-sm-4">
                                         <?php
-                                        require("/config/conexao.php");
+                                        require("/config/Conexao.php");
                                         $sql = "SELECT * FROM mesa WHERE idm = '1'";
                                         $resultado = $Conexao->query($sql);
                                         $row = $resultado->fetch_assoc();

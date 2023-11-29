@@ -1,5 +1,5 @@
 <?php 
-include ("../config/conexao.php");
+include ("../config/Conexao.php");
     guardarpontos($dni){
         
         print_r($dni);

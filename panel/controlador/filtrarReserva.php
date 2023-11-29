@@ -1,5 +1,5 @@
 <?php
-  require ('../config/conexao.php');
+  require ('../config/Conexao.php');
   if(ISSET($_POST['buscar'])){
     $date1 = date("Y-m-d", strtotime($_POST['date1']));
     $date2 = date("Y-m-d", strtotime($_POST['date2']));

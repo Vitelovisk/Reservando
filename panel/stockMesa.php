@@ -156,7 +156,7 @@
                                 <h1 class="h3 mb-2 text-gray-800">Stock - Mesas</h1>
                                     <form action="controlador/editarStock.php" method="POST">
                                         <?php
-                                            include ('config/conexao.php');
+                                            include ('config/Conexao.php');
 
                                             $sql = "SELECT * FROM mesa ";
                                             $resultado = $Conexao->query($sql);

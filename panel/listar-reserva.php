@@ -217,7 +217,7 @@ try {
                                     </thead>
                                     <?php
                                         $cont = 1;
-                                        require("config/conexao.php");
+                                        require("config/Conexao.php");
                                         $sql = $Conexao->query("SELECT * FROM reserva WHERE usuario_idu = '$id'");
                                         while($resultado = $sql->fetch_assoc()) { ?>
 

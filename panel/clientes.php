@@ -218,7 +218,7 @@
                                     <tbody>
                                         <?php 
                                             $cont = 1;
-                                            require("Config/Conexao.php");
+                                            require("config/conexao.php");
                                             $sql = $Conexao->query("SELECT * FROM usuario WHERE cargo_idc = 2");
                                             while($resultado = $sql->fetch_assoc()) { 
                                         ?>

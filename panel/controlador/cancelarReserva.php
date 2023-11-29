@@ -1,5 +1,5 @@
 <?php
-    include ("../config/Conexao.php");
+    include ("../config/conexao.php");
 
     $id = $_GET['id'];
     $sql = "DELETE FROM reserva WHERE idr ='$id'";

@@ -1,5 +1,5 @@
 <?php
-  require ('../config/Conexao.php');
+  require ('../config/conexao.php');
   if(ISSET($_POST['buscar'])){
     $date1 = date("Y-m-d", strtotime($_POST['date1']));
     $date2 = date("Y-m-d", strtotime($_POST['date2']));
@@ -18,8 +18,8 @@
     <td><?php echo $resultado['status']; ?>&nbsp; &nbsp; &nbsp;<a href="atualizarstatus.php?id=<?php echo $resultado['idr']?>&estado=<?php echo $resultado['status'];?>" class="btn btn-primary"><i class="fas fa-marker"></i></a></td>
     <td>
         <a href="detallesReserva.php?id=<?php echo $resultado['idr']?>" class="btn btn-primary"><i class="fas fa-list"></i></a>
-        <a href="https://api.whatsapp.com/send?phone=51<?php echo $resultado['numero']?>&text=Buen%20día%20, <?php echo $resultado['nomes']?>%20<?php echo $resultado['apelidos'] ?>%20tienes
-%20una%20reserva%20el%20día%20de%20hoy%20<?php echo $resultado['hora']?>" class="btn btn-success"><i class="fas fa-share"></i></a>
+        <a href="https://api.whatsapp.com/send?phone=51<?php echo $resultado['numero']?>&text=Bom%20dia%20, <?php echo $resultado['nomes']?>%20<?php echo $resultado['apelidos'] ?>%20você
+%20tem%20uma%20reserva%20dia%20hoje%20as%20<?php echo $resultado['hora']?>" class="btn btn-success"><i class="fas fa-share"></i></a>
     </td>
 </tr>
     
@@ -45,8 +45,8 @@
     <td><?php echo $resultado['status']; ?>&nbsp; &nbsp; &nbsp;<a href="atualizarstatus.php?id=<?php echo $resultado['idr']?>&estado=<?php echo $resultado['status'];?>" class="btn btn-primary"><i class="fas fa-marker"></i></a></td>
     <td>
         <a href="detallesReserva.php?id=<?php echo $resultado['idr']?>" class="btn btn-primary"><i class="fas fa-list"></i></a>
-        <a href="https://api.whatsapp.com/send?phone=51<?php echo $resultado['numero']?>&text=Buen%20día%20, <?php echo $resultado['nomes']?>%20<?php echo $resultado['apelidos'] ?>%20tienes
-%20una%20reserva%20el%20día%20de%20hoy%20<?php echo $resultado['hora']?>" class="btn btn-success"><i class="fas fa-share"></i></a>
+        <a href="https://api.whatsapp.com/send?phone=51<?php echo $resultado['numero']?>&text=Bom%20dia%20, <?php echo $resultado['nomes']?>%20<?php echo $resultado['apelidos'] ?>%20você
+%20tem%20uma%20reserva%20dia%20hoje%20as%20<?php echo $resultado['hora']?>" class="btn btn-success"><i class="fas fa-share"></i></a>
     </td>
 </tr>
 <?php

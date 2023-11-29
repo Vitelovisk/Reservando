@@ -1,6 +1,6 @@
 <?php
 
-include ("../config/Conexao.php");
+include ("../config/conexao.php");
 
 $nomes = $_POST['nomes'];
 $apelidos = $_POST['apelidos'];

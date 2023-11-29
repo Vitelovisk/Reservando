@@ -1,6 +1,6 @@
 <?php
 
-    include_once("../config/Conexao.php");
+    include_once("../config/conexao.php");
     
     $quantidade = $_POST['quantidade'];
 

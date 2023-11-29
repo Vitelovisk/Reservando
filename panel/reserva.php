@@ -210,8 +210,8 @@
                                             <?php } ?>
                                             <td>
                                                 <a href="detallesReserva.php?id=<?php echo $resultado['idr']?>" class="btn btn-primary"><i class="fas fa-list"></i></a>
-                                                <a href="https://api.whatsapp.com/send?phone=51<?php echo $resultado['numero']?>&text=Buen%20día%20, <?php echo $resultado['nomes']?>%20<?php echo $resultado['apelidos'] ?>%20tienes
-%20una%20reserva%20el%20día%20de%20hoy%20<?php echo $resultado['hora']?>" class="btn btn-success"><i class="fas fa-share"></i></a>
+                                                <a href="https://api.whatsapp.com/send?phone=51<?php echo $resultado['numero']?>&text=Bom%20dia%20, <?php echo $resultado['nomes']?>%20<?php echo $resultado['apelidos'] ?>%20você
+%20tem%20uma%20reserva%20dia%20hoje%20as%20<?php echo $resultado['hora']?>" class="btn btn-success"><i class="fas fa-share"></i></a>
                                             </td>
                                         </tr>
 

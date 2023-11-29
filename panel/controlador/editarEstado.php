@@ -1,6 +1,6 @@
 <?php
 
-    include_once("../config/Conexao.php");
+    include_once("../config/conexao.php");
     $id = $_POST['idR'];
     $estado = $_POST['estadoN'];
     $user = $_POST['user'];

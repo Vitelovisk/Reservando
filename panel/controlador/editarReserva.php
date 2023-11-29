@@ -1,6 +1,6 @@
 <?php
 
-    include_once("../config/Conexao.php");
+    include_once("../config/conexao.php");
     $id = $_POST['id'];
     $quantidade = $_POST['quantidade'];
     $fecha = $_POST['fecha'];

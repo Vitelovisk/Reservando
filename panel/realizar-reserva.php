@@ -160,7 +160,7 @@
                                         <?php
                                         require("config/conexao.php");
                                         $sql = "SELECT * FROM mesa WHERE idm = '1'";
-                                        $resultado = $Conexao->query($sql);
+                                        $resultado = $conexao->query($sql);
                                         $row = $resultado->fetch_assoc();
                                         $quantidade = $row['quantidade'];
                                         if($quantidade > 0){?>

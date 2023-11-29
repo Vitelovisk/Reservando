@@ -158,7 +158,7 @@
                                         <?php
                                             include ('config/conexao.php');
                                             $id=$_GET['id'];
-                                            $sql = $Conexao->query("SELECT * FROM reserva r JOIN usuario u ON r.usuario_idu = u.id JOIN estado e ON r.estado_id_status = e.id_status WHERE idr=$id");
+                                            $sql = $conexao->query("SELECT * FROM reserva r JOIN usuario u ON r.usuario_idu = u.id JOIN estado e ON r.estado_id_status = e.id_status WHERE idr=$id");
                                             $resultado = $sql->fetch_assoc();
                                         ?>
                                    

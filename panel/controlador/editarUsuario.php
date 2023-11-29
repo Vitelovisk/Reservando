@@ -19,6 +19,6 @@
                     direcao='".$direcao."', 
                     password='".$password."' WHERE id =".$id."";
 
-    if ($resultado = $Conexao->query($sql)) {
+    if ($resultado = $conexao->query($sql)) {
         header("location: ../perfil-usuario.php");
     }

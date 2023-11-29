@@ -6,6 +6,6 @@
 
     $sql = "UPDATE mesa SET quantidade='".$quantidade."' WHERE idm ='1'";
 
-    if ($resultado = $Conexao->query($sql)) {
+    if ($resultado = $conexao->query($sql)) {
         header("location: ../stockMesa.php");
     }

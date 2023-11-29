@@ -3,7 +3,7 @@
   if(ISSET($_POST['buscar'])){
     $date1 = date("Y-m-d", strtotime($_POST['date1']));
     $date2 = date("Y-m-d", strtotime($_POST['date2']));
-    $query=mysqli_query($Conexao, "SELECT * FROM reserva WHERE fechar BETWEEN '$date1' AND '$date2'") or die(mysqli_error());
+    $query=mysqli_query($conexao, "SELECT * FROM reserva WHERE fechar BETWEEN '$date1' AND '$date2'") or die(mysqli_error());
     $row=mysqli_num_rows($query);
     if($row>0){
       while($fetch=mysqli_fetch_array($query)){

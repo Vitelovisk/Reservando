@@ -219,7 +219,7 @@
                                         <?php 
                                             $cont = 1;
                                             require("config/conexao.php");
-                                            $sql = $Conexao->query("SELECT * FROM usuario WHERE cargo_idc = 2");
+                                            $sql = $conexao->query("SELECT * FROM usuario WHERE cargo_idc = 2");
                                             while($resultado = $sql->fetch_assoc()) { 
                                         ?>
                                         <tr>

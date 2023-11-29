@@ -158,9 +158,9 @@
                                     <div class="form-group row">
                                         <div class="col-sm-4">
                                         <?php
-                                        require("config/conexao.php");
+                                        require("/config/conexao.php");
                                         $sql = "SELECT * FROM mesa WHERE idm = '1'";
-                                        $resultado = $conexao->query($sql);
+                                        $resultado = $Conexao->query($sql);
                                         $row = $resultado->fetch_assoc();
                                         $quantidade = $row['quantidade'];
                                         if($quantidade > 0){?>

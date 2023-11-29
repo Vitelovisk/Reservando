@@ -159,7 +159,7 @@
                                             include ('config/conexao.php');
 
                                             $sql = "SELECT * FROM reserva WHERE idr =".$_GET['id'];
-                                            $resultado = $conexao->query($sql);
+                                            $resultado = $Conexao->query($sql);
                                             $row = $resultado->fetch_assoc();
                                         ?>
                                     <input type="Hidden" class="form-control" name="id" value="<?php echo $row['idr']; ?>" style="display:none">

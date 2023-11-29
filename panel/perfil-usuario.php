@@ -163,7 +163,7 @@
                                             include ('config/conexao.php');
 
                                             $sql = "SELECT * FROM usuario WHERE id = '$id'";
-                                            $resultado = $conexao->query($sql);
+                                            $resultado = $Conexao->query($sql);
                                             $row = $resultado->fetch_assoc();
                                         ?>
 

@@ -15,7 +15,7 @@ $tipo = $_POST['tipo'];
 
 $sql = "INSERT INTO usuario(nomes, apelidos, dni, numero, fecha, email, direcao, password, pontos, estado_usuario, cargo_idc ) VALUES ('$nomes','$apelidos', '$dni','$celular','$fecha','$email', '$direcao', '$password', '10' , '$estado','$tipo')";
 
-$verificar = mysqli_query($conexao, "SELECT * FROM usuario WHERE dni = '$dni'");
+$verificar = mysqli_query($Conexao, "SELECT * FROM usuario WHERE dni = '$dni'");
 if(mysqli_num_rows($verificar) > 0){
     echo '<script>
             alert("Este documento de identidad ya se encuentra registrado, intento con otro");
@@ -24,7 +24,7 @@ if(mysqli_num_rows($verificar) > 0){
         exit();
 }
 
-$resultado = mysqli_query($conexao, $sql);
+$resultado = mysqli_query($Conexao, $sql);
 
 
 if ($resultado == TRUE) {

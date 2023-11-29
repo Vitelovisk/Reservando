@@ -159,7 +159,7 @@
                                             include ('config/conexao.php');
 
                                             $sql = "SELECT * FROM mesa ";
-                                            $resultado = $conexao->query($sql);
+                                            $resultado = $Conexao->query($sql);
                                             $row = $resultado->fetch_assoc();
                                         ?>
                                             <div class="form-group row" >

@@ -15,6 +15,6 @@
                     hora='".$hora."',
                     comentario='".$comentario."' WHERE idr =".$id."";
 
-    if ($resultado = $conexao->query($sql)) {
+    if ($resultado = $Conexao->query($sql)) {
         header("location: ../listar-reserva.php");
     }

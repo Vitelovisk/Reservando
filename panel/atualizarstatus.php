@@ -168,7 +168,7 @@
                                             <select name="estadoN" class="form-control">
                                                 <option selected><?php echo $estado ?></option>
                                                 <?php
-                                                    $sql = $conexao->query("SELECT * FROM estado");
+                                                    $sql = $Conexao->query("SELECT * FROM estado");
                                                     while($valores = mysqli_fetch_array($sql)) { 
                                                         echo '<option value="'.$valores['id_status'].'">'.$valores['status'].'</option>';
                                                     }

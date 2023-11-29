@@ -6,7 +6,7 @@ $quantidade = $_POST['quantidade'];
 
 $sql = "INSERT INTO mesa(quantidade) VALUES ('$quantidade')";
 
-$resultado = mysqli_query($conexao, $sql);
+$resultado = mysqli_query($Conexao, $sql);
 
 
 if ($resultado == TRUE) {

@@ -10,11 +10,11 @@ $pass = "yqN5ZbUGwb5K564N2koi";
 $db = "reservando";
 
 // Estabelecendo a conexão com o banco de dados
-$conexao = new mysqli($host, $user, $pass, $db);
+$Conexao = new mysqli($host, $user, $pass, $db);
 
 // Verificar se a conexão foi estabelecida
-if ($conexao->connect_error) {
-    die("Conexão falhada: " . $conexao->connect_error);
+if ($Conexao->connect_error) {
+    die("Conexão falhada: " . $Conexao->connect_error);
 }
 
 // Pegando os valores enviados pelo formulário
@@ -22,7 +22,7 @@ $usuario_idu = $_POST['usuario_idu'];
 $cod_brinde = $_POST['cod_brinde'];
 
 // Preparando a consulta para verificar se o brinde pertence ao usuário
-$stmt = $conexao->prepare("SELECT * FROM brindes WHERE cod_brinde = ? AND usuario_idu = ?");
+$stmt = $Conexao->prepare("SELECT * FROM brindes WHERE cod_brinde = ? AND usuario_idu = ?");
 $stmt->bind_param("si", $cod_brinde, $usuario_idu);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -33,7 +33,7 @@ if ($result->num_rows > 0) {
     $dataHoraAtual = date("Y-m-d H:i:s");
 
     // Atualizando o status do brinde e a dataHoraColeta
-    $updateStmt = $conexao->prepare("UPDATE brindes SET status_brinde = '2', dataHoraColeta = ? WHERE cod_brinde = ? AND usuario_idu = ?");
+    $updateStmt = $Conexao->prepare("UPDATE brindes SET status_brinde = '2', dataHoraColeta = ? WHERE cod_brinde = ? AND usuario_idu = ?");
     $updateStmt->bind_param("ssi", $dataHoraAtual, $cod_brinde, $usuario_idu);
     $updateStmt->execute();
 
@@ -49,7 +49,7 @@ $stmt->close();
 if (isset($updateStmt)) {
     $updateStmt->close();
 }
-$conexao->close();
+$Conexao->close();
 
 // Redireciona de volta para a página dos clientes
 header('Location: clientes.php');

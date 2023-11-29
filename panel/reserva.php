@@ -191,7 +191,7 @@
                                     <?php
                                         $cont = 1;
                                         require("Config/Conexao.php");
-                                        $sql = $conexao->query("SELECT * FROM reserva r JOIN usuario u ON r.usuario_idu = u.id JOIN estado e ON r.estado_id_status = e.id_status");
+                                        $sql = $Conexao->query("SELECT * FROM reserva r JOIN usuario u ON r.usuario_idu = u.id JOIN estado e ON r.estado_id_status = e.id_status");
                                         while($resultado = $sql->fetch_assoc()) { ?>
 
                                     <tbody>

@@ -4,9 +4,9 @@
   $pass = "yqN5ZbUGwb5K564N2koi";
   $db = "reservando";
 
-$conexao =  new mysqli($host,$user,$pass,$db);
+$Conexao =  new mysqli($host,$user,$pass,$db);
 
-if(!$conexao){
+if(!$Conexao){
   echo "Conexao falhou";
 }
 

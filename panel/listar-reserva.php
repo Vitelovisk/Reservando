@@ -10,9 +10,9 @@ $cargo_idc = $_SESSION['cargo_idc'];
 $brindeDisponivel = false; // Inicializando a variável
 
 try {
-    $host = "localhost";
-    $user = "root";
-    $pass = "";
+    $host = "aws-reservando-db-mysql.c9joiyhrzm9x.sa-east-1.rds.amazonaws.com";
+    $user = "admin";
+    $pass = "yqN5ZbUGwb5K564N2koi";
     $db = "reservando";
 
     $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
@@ -217,7 +217,7 @@ try {
                                     </thead>
                                     <?php
                                         $cont = 1;
-                                        require("config/Conexao.php");
+                                        require("config/conexao.php");
                                         $sql = $Conexao->query("SELECT * FROM reserva WHERE usuario_idu = '$id'");
                                         while($resultado = $sql->fetch_assoc()) { ?>
 

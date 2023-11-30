@@ -28,6 +28,6 @@ Aguardando Próximas Etapas
 
 Aceitamos contribuições neste projeto. Sinta-se à vontade para enviar pull requests ou relatar problemas.
 
-## Autores
+## Autor
 
 - [Vitor Tomasi] - [vitortomasitomasi@gmail.com]

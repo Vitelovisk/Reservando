@@ -29,7 +29,7 @@
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <!-- Estilos para o Modal -->
     <style>
-    .modal {
+    .modal2 {
         display: none; 
         position: fixed; 
         z-index: 1; 
@@ -186,7 +186,7 @@
 
                 <div class="container-fluid">
                 <!-- Page Heading -->
-                    <div id="myModal" class="modal">
+                    <div id="myModal" class="modal2">
                         <div class="modal-cont">
                             <span class="close">&times;</span>
                             <p id="modalText">Alguma mensagem aqui...</p>
@@ -218,8 +218,8 @@
                                     <tbody>
                                         <?php 
                                             $cont = 1;
-                                            require("config/Conexao.php");
-                                            $sql = $Conexao->query("SELECT * FROM usuario WHERE cargo_idc = 2");
+                                            require("config/conexao.php");
+                                            $sql = $conexao->query("SELECT * FROM usuario WHERE cargo_idc = 2");
                                             while($resultado = $sql->fetch_assoc()) { 
                                         ?>
                                         <tr>

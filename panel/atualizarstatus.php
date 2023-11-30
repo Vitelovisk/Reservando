@@ -156,7 +156,7 @@
                                 </div>
                                 <form action="controlador/editarEstado.php" method="POST">
                                         <?php
-                                            include ('config/Conexao.php');
+                                            include ('config/conexao.php');
                                             $idR =$_GET['id'];
                                             $estado = $_GET['estado'];
                                             $user = $_GET['user'];
@@ -168,7 +168,7 @@
                                             <select name="estadoN" class="form-control">
                                                 <option selected><?php echo $estado ?></option>
                                                 <?php
-                                                    $sql = $Conexao->query("SELECT * FROM estado");
+                                                    $sql = $conexao->query("SELECT * FROM estado");
                                                     while($valores = mysqli_fetch_array($sql)) { 
                                                         echo '<option value="'.$valores['id_status'].'">'.$valores['status'].'</option>';
                                                     }

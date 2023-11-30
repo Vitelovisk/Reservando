@@ -50,7 +50,7 @@
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Consulta ao banco de dados
-        $sql = "SELECT tipo, SUM(quantidade) AS total FROM Reserva GROUP BY tipo";
+        $sql = "SELECT tipo, SUM(quantidade) AS total FROM reserva GROUP BY tipo";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -92,7 +92,7 @@
                         beginAtZero: true
                     }
                 }
-            }
+           }
         });
     </script>
 </body>

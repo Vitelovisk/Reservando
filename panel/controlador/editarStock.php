@@ -1,11 +1,11 @@
 <?php
 
-    include_once("../config/Conexao.php");
+    include_once("../config/conexao.php");
     
     $quantidade = $_POST['quantidade'];
 
     $sql = "UPDATE mesa SET quantidade='".$quantidade."' WHERE idm ='1'";
 
-    if ($resultado = $Conexao->query($sql)) {
+    if ($resultado = $conexao->query($sql)) {
         header("location: ../stockMesa.php");
     }

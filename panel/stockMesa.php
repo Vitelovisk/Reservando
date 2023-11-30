@@ -156,10 +156,10 @@
                                 <h1 class="h3 mb-2 text-gray-800">Stock - Mesas</h1>
                                     <form action="controlador/editarStock.php" method="POST">
                                         <?php
-                                            include ('config/Conexao.php');
+                                            include ('config/conexao.php');
 
                                             $sql = "SELECT * FROM mesa ";
-                                            $resultado = $Conexao->query($sql);
+                                            $resultado = $conexao->query($sql);
                                             $row = $resultado->fetch_assoc();
                                         ?>
                                             <div class="form-group row" >

@@ -1,6 +1,6 @@
 <?php
 
-    include_once("../config/Conexao.php");
+    include_once("../config/conexao.php");
     $id = $_POST['id'];
     $quantidade = $_POST['quantidade'];
     $fecha = $_POST['fecha'];
@@ -15,6 +15,6 @@
                     hora='".$hora."',
                     comentario='".$comentario."' WHERE idr =".$id."";
 
-    if ($resultado = $Conexao->query($sql)) {
+    if ($resultado = $conexao->query($sql)) {
         header("location: ../listar-reserva.php");
     }

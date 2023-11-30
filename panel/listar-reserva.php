@@ -242,18 +242,18 @@ try {
                     <!-- Local para mostrar a disponibilidade do brinde -->
                     <div class="card shadow mb-4">
                         <div class="card-body" id="status-brinde">
-<?php
-    if ($brindeDisponivel) {
-        // Se um novo brinde foi disponibilizado, exibe o código dele
-        echo "<p>Parabéns! Você tem um brinde de champanhe disponível! Código do Brinde: $codBrinde</p>";
-    } elseif ($brindeExistente && $brindeExistente['status_brinde'] == 1) {
-        // Se já existe um brinde disponível, exibe o código do brinde existente
-        $codBrindeExistente = $brindeExistente['cod_brinde'];
-        echo "<p>Parabéns! Você tem um brinde de champanhe disponível! Código do Brinde: $codBrindeExistente</p>";
-    } else {
-        echo "<p>Você ainda não tem um brinde disponível.<br> Faça mais reservas ou aguarde o gerente finalizar sua reserva!</p>";
-    }
-?>
+                        <?php
+                            if ($brindeDisponivel) {
+                                // Se um novo brinde foi disponibilizado, exibe o código dele
+                                echo "<p>Parabéns! Você tem um brinde de champanhe disponível! Código do Brinde: $codBrinde</p>";
+                            } elseif ($brindeExistente && $brindeExistente['status_brinde'] == 1) {
+                                // Se já existe um brinde disponível, exibe o código do brinde existente
+                                $codBrindeExistente = $brindeExistente['cod_brinde'];
+                                echo "<p>Parabéns! Você tem um brinde de champanhe disponível! Código do Brinde: $codBrindeExistente</p>";
+                            } else {
+                                echo "<p>Você ainda não tem um brinde disponível.<br> Faça mais reservas ou aguarde o gerente finalizar sua reserva!</p>";
+                            }
+                        ?>
 
                         </div>
                     </div>

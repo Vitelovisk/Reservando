@@ -10,15 +10,15 @@ $cargo_idc = $_SESSION['cargo_idc'];
 $brindeDisponivel = false; // Inicializando a variável
 
 try {
-    $host = "localhost";
-    $user = "root";
-    $pass = "";
-    $db = "reservando";
+	$host = "aws-reservando-db-mysql.c9joiyhrzm9x.sa-east-1.rds.amazonaws.com";
+	$user = "admin";
+	$pass = "yqN5ZbUGwb5K564N2koi";
+	$db = "reservando";
 
-    $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
+      $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
 
     // Consultar a tabela Brindes para verificar se o usuário já possui um brinde com status 1
-    $stmt = $pdo->prepare("SELECT * FROM Brindes WHERE usuario_idu = :id AND status_brinde = 1");
+    $stmt = $pdo->prepare("SELECT * FROM brindes WHERE usuario_idu = :id AND status_brinde = 1");
     $stmt->execute(['id' => $id]);
     $brindeExistente = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -27,7 +27,7 @@ try {
         $brindeDisponivel = false;
     } else {
         // Verificar se a condição específica é atendida
-        $stmt = $pdo->prepare("SELECT COUNT(*) AS num_reservas FROM Reserva WHERE usuario_idu = :id AND estado_id_status = 3 AND DataHoraCadastro > (SELECT MAX(DataHoraColeta) FROM Brindes WHERE usuario_idu = :id)");
+        $stmt = $pdo->prepare("SELECT COUNT(*) AS num_reservas FROM reserva WHERE usuario_idu = :id AND estado_id_status = 3 AND DataHoraCadastro > (SELECT MAX(DataHoraColeta) FROM brindes WHERE usuario_idu = :id)");
         $stmt->execute(['id' => $id]);
 
         // Obter o resultado
@@ -42,7 +42,7 @@ try {
             $dataHoraCadastro = date('Y-m-d H:i:s');
 
             // Atualizar o status do brinde para 1 (liberado), inserir o novo brinde na tabela brindes e definir a data e hora do cadastro
-            $stmt = $pdo->prepare("INSERT INTO Brindes (cod_brinde, status_brinde, usuario_idu, dataHoraCadastro) VALUES (:codBrinde, 1, :idUsuario, NOW())");
+            $stmt = $pdo->prepare("INSERT INTO brindes (cod_brinde, status_brinde, usuario_idu, dataHoraCadastro) VALUES (:codBrinde, 1, :idUsuario, NOW())");
             $stmt->execute(['codBrinde' => $codBrinde, 'idUsuario' => $id]);
             $brindeDisponivel = true;
         } else {
@@ -54,7 +54,6 @@ try {
     echo "Erro na conexão: " . $e->getMessage();
 }
 ?>
-
 
 
 <!DOCTYPE html>
@@ -197,7 +196,7 @@ try {
 
                 <div class="container-fluid">
                 <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Minhas Reservass</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Minhas Reservas</h1>
 
                 <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -243,15 +242,19 @@ try {
                     <!-- Local para mostrar a disponibilidade do brinde -->
                     <div class="card shadow mb-4">
                         <div class="card-body" id="status-brinde">
-                            <?php
-                                if ($brindeDisponivel) {
-                                    echo "<p>Parabéns! Você tem um brinde de champanhe disponível!</p>";
-                                } elseif ($brindeExistente && $brindeExistente['status_brinde'] == 1) {
-                                    echo "<p>Parabéns! Você tem um brinde de champanhe disponível!</p>";
-                                } else {
-                                    echo "<p>Você ainda não tem um brinde disponível.<br> Faça mais reservas ou aguarde o gerente finalizar sua reserva!</p>";
-                                }
-                            ?>
+<?php
+    if ($brindeDisponivel) {
+        // Se um novo brinde foi disponibilizado, exibe o código dele
+        echo "<p>Parabéns! Você tem um brinde de champanhe disponível! Código do Brinde: $codBrinde</p>";
+    } elseif ($brindeExistente && $brindeExistente['status_brinde'] == 1) {
+        // Se já existe um brinde disponível, exibe o código do brinde existente
+        $codBrindeExistente = $brindeExistente['cod_brinde'];
+        echo "<p>Parabéns! Você tem um brinde de champanhe disponível! Código do Brinde: $codBrindeExistente</p>";
+    } else {
+        echo "<p>Você ainda não tem um brinde disponível.<br> Faça mais reservas ou aguarde o gerente finalizar sua reserva!</p>";
+    }
+?>
+
                         </div>
                     </div>
 

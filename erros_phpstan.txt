@@ -1,0 +1,227 @@
+Note: Using configuration file /var/www/html/Reservando/phpstan.neon.
+  0/40 [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0%[1G[2K 20/40 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░]  50%[1G[2K 40/40 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%
+
+ ------ ----------------------------------------- 
+  Line   panel/atualizarstatus.php                
+ ------ ----------------------------------------- 
+  171    Variable $conexao might not be defined.  
+ ------ ----------------------------------------- 
+
+ ------ ----------------------------------------- 
+  Line   panel/clientes.php                       
+ ------ ----------------------------------------- 
+  222    Variable $conexao might not be defined.  
+ ------ ----------------------------------------- 
+
+ ------ --------------------------------------------- 
+  Line   panel/config/conexao.php                     
+ ------ --------------------------------------------- 
+  9      Negated boolean expression is always false.  
+ ------ --------------------------------------------- 
+
+ ------ ----------------------------------------- 
+  Line   panel/controlador/cancelarReserva.php    
+ ------ ----------------------------------------- 
+  7      Variable $conexao might not be defined.  
+ ------ ----------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------------------ 
+  Line   panel/controlador/editarEstado.php                                                                    
+ ------ ------------------------------------------------------------------------------------------------------ 
+  11     Variable $conexao might not be defined.                                                               
+  13     Variable $conexao might not be defined.                                                               
+  14     Parameter #1 $result of function mysqli_fetch_array expects mysqli_result, bool|mysqli_result given.  
+  15     Cannot access offset 'estado_id_status' on array|false.                                               
+  20     Variable $conexao might not be defined.                                                               
+  21     Parameter #1 $result of function mysqli_fetch_array expects mysqli_result, bool|mysqli_result given.  
+  22     Cannot access offset 'pontos' on array|false.                                                         
+  26     Variable $conexao might not be defined.                                                               
+  27     Variable $conexao might not be defined.                                                               
+  28     Parameter #1 $result of function mysqli_fetch_array expects mysqli_result, bool|mysqli_result given.  
+  29     Cannot access offset 'pontos' on array|false.                                                         
+ ------ ------------------------------------------------------------------------------------------------------ 
+
+ ------ ----------------------------------------- 
+  Line   panel/controlador/editarReserva.php      
+ ------ ----------------------------------------- 
+  18     Variable $conexao might not be defined.  
+ ------ ----------------------------------------- 
+
+ ------ ----------------------------------------- 
+  Line   panel/controlador/editarStock.php        
+ ------ ----------------------------------------- 
+  9      Variable $conexao might not be defined.  
+ ------ ----------------------------------------- 
+
+ ------ ----------------------------------------- 
+  Line   panel/controlador/editarUsuario.php      
+ ------ ----------------------------------------- 
+  22     Variable $conexao might not be defined.  
+ ------ ----------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------------------ 
+  Line   panel/controlador/filtrarReserva.php                                                                  
+ ------ ------------------------------------------------------------------------------------------------------ 
+  6      Function mysqli_error invoked with 0 parameters, 1 required.                                          
+  6      Variable $conexao might not be defined.                                                               
+  7      Parameter #1 $result of function mysqli_num_rows expects mysqli_result, mysqli_result|true given.     
+  9      Parameter #1 $result of function mysqli_fetch_array expects mysqli_result, mysqli_result|true given.  
+  12     Variable $cont might not be defined.                                                                  
+  12     Variable $cont might not be defined.                                                                  
+  13     Variable $resultado might not be defined.                                                             
+  14     Variable $resultado might not be defined.                                                             
+  15     Variable $resultado might not be defined.                                                             
+  16     Variable $resultado might not be defined.                                                             
+  17     Variable $resultado might not be defined.                                                             
+  18     Variable $resultado might not be defined.                                                             
+  18     Variable $resultado might not be defined.                                                             
+  18     Variable $resultado might not be defined.                                                             
+  20     Variable $resultado might not be defined.                                                             
+  21     Variable $resultado might not be defined.                                                             
+  21     Variable $resultado might not be defined.                                                             
+  21     Variable $resultado might not be defined.                                                             
+  22     Variable $resultado might not be defined.                                                             
+  35     Function mysqli_error invoked with 0 parameters, 1 required.                                          
+  35     Variable $conn might not be defined.                                                                  
+  36     Parameter #1 $result of function mysqli_fetch_array expects mysqli_result, mysqli_result|true given.  
+  39     Variable $cont might not be defined.                                                                  
+  39     Variable $cont might not be defined.                                                                  
+  40     Variable $resultado might not be defined.                                                             
+  41     Variable $resultado might not be defined.                                                             
+  42     Variable $resultado might not be defined.                                                             
+  43     Variable $resultado might not be defined.                                                             
+  44     Variable $resultado might not be defined.                                                             
+  45     Variable $resultado might not be defined.                                                             
+  45     Variable $resultado might not be defined.                                                             
+  45     Variable $resultado might not be defined.                                                             
+  47     Variable $resultado might not be defined.                                                             
+  48     Variable $resultado might not be defined.                                                             
+  48     Variable $resultado might not be defined.                                                             
+  48     Variable $resultado might not be defined.                                                             
+  49     Variable $resultado might not be defined.                                                             
+ ------ ------------------------------------------------------------------------------------------------------ 
+
+ ------ -------------------------------------------------------- 
+  Line   panel/controlador/guardarPuntos.php                     
+ ------ -------------------------------------------------------- 
+  5      Syntax error, unexpected ';' on line 5                  
+  13     Syntax error, unexpected '}', expecting EOF on line 13  
+ ------ -------------------------------------------------------- 
+
+ ------ ----------------------------------------- 
+  Line   panel/controlador/guardarReserva.php     
+ ------ ----------------------------------------- 
+  14     Variable $conexao might not be defined.  
+ ------ ----------------------------------------- 
+
+ ------ ----------------------------------------- 
+  Line   panel/controlador/guardarStock.php       
+ ------ ----------------------------------------- 
+  9      Variable $conexao might not be defined.  
+ ------ ----------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------- 
+  Line   panel/controlador/guardarUsuario.php                                                               
+ ------ --------------------------------------------------------------------------------------------------- 
+  18     Variable $conexao might not be defined.                                                            
+  19     Parameter #1 $result of function mysqli_num_rows expects mysqli_result, bool|mysqli_result given.  
+  27     Variable $conexao might not be defined.                                                            
+ ------ --------------------------------------------------------------------------------------------------- 
+
+ ------ ----------------------------------------- 
+  Line   panel/detallesReserva.php                
+ ------ ----------------------------------------- 
+  161    Variable $conexao might not be defined.  
+ ------ ----------------------------------------- 
+
+ ------ ----------------------------------------- 
+  Line   panel/editarReserva.php                  
+ ------ ----------------------------------------- 
+  162    Variable $conexao might not be defined.  
+ ------ ----------------------------------------- 
+
+ ------ ---------------------------------------- 
+  Line   panel/iniciar-sessao.php                
+ ------ ---------------------------------------- 
+  14     Variable $mysqli might not be defined.  
+ ------ ---------------------------------------- 
+
+ ------ ------------------------------------------------- 
+  Line   panel/listar-reserva.php                         
+ ------ ------------------------------------------------- 
+  220    Variable $conexao might not be defined.          
+  248    Variable $codBrinde might not be defined.        
+  249    Variable $brindeExistente might not be defined.  
+ ------ ------------------------------------------------- 
+
+ ------ ----------------------------------------- 
+  Line   panel/perfil-usuario.php                 
+ ------ ----------------------------------------- 
+  166    Variable $conexao might not be defined.  
+ ------ ----------------------------------------- 
+
+ ------ ---------------------------------------------------------- 
+  Line   panel/processaBrinde.php                                  
+ ------ ---------------------------------------------------------- 
+  26     Cannot call method bind_param() on mysqli_stmt|false.     
+  27     Cannot call method execute() on mysqli_stmt|false.        
+  28     Cannot call method get_result() on mysqli_stmt|false.     
+  31     Cannot access property $num_rows on mysqli_result|false.  
+  37     Cannot call method bind_param() on mysqli_stmt|false.     
+  38     Cannot call method execute() on mysqli_stmt|false.        
+  48     Cannot call method close() on mysqli_stmt|false.          
+ ------ ---------------------------------------------------------- 
+
+ ------ ----------------------------------------- 
+  Line   panel/realizar-reserva.php               
+ ------ ----------------------------------------- 
+  163    Variable $conexao might not be defined.  
+ ------ ----------------------------------------- 
+
+ ------ ----------------------------------------- 
+  Line   panel/reserva.php                        
+ ------ ----------------------------------------- 
+  194    Variable $conexao might not be defined.  
+ ------ ----------------------------------------- 
+
+ ------ ----------------------------------------- 
+  Line   panel/stockMesa.php                      
+ ------ ----------------------------------------- 
+  162    Variable $conexao might not be defined.  
+ ------ ----------------------------------------- 
+
+ ------ ----------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+  Line   vendor/composer/ClassLoader.php                                                                                                                                  
+ ------ ----------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+  391    Parameter #1 $callback of function spl_autoload_register expects (callable(string): void)|null, array{$this(Composer\Autoload\ClassLoader), 'loadClass'} given.  
+ ------ ----------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------------------- 
+  Line   vendor/composer/InstalledVersions.php                                                                                
+ ------ --------------------------------------------------------------------------------------------------------------------- 
+  118    Parameter $parser of method Composer\InstalledVersions::satisfies() has invalid type Composer\Semver\VersionParser.  
+  118    Parameter $parser of method Composer\InstalledVersions::satisfies() has invalid type Composer\Semver\VersionParser.  
+  120    Call to method parseConstraints() on an unknown class Composer\Semver\VersionParser.                                 
+         💡 Learn more at https://phpstan.org/user-guide/discovering-symbols                                                  
+  121    Call to method parseConstraints() on an unknown class Composer\Semver\VersionParser.                                 
+         💡 Learn more at https://phpstan.org/user-guide/discovering-symbols                                                  
+ ------ --------------------------------------------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------------------------------------------- 
+  Line   vendor/composer/autoload_real.php                                                                                              
+ ------ ------------------------------------------------------------------------------------------------------------------------------- 
+  7      Property ComposerAutoloaderInitd9be9fbe0b851e364933d6f772364f1b::$loader has no type specified.                                
+  9      Method ComposerAutoloaderInitd9be9fbe0b851e364933d6f772364f1b::loadClassLoader() has no return type specified.                 
+  9      Method ComposerAutoloaderInitd9be9fbe0b851e364933d6f772364f1b::loadClassLoader() has parameter $class with no type specified.  
+ ------ ------------------------------------------------------------------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------------------------------------------------------------- 
+  Line   vendor/composer/autoload_static.php                                                                                          
+ ------ ----------------------------------------------------------------------------------------------------------------------------- 
+  9      Property Composer\Autoload\ComposerStaticInitd9be9fbe0b851e364933d6f772364f1b::$files has no type specified.                 
+  13     Property Composer\Autoload\ComposerStaticInitd9be9fbe0b851e364933d6f772364f1b::$classMap has no type specified.              
+  17     Method Composer\Autoload\ComposerStaticInitd9be9fbe0b851e364933d6f772364f1b::getInitializer() has no return type specified.  
+ ------ ----------------------------------------------------------------------------------------------------------------------------- 
+
+ [ERROR] Found 90 errors                                                                                                
+

@@ -29,7 +29,7 @@
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <!-- Estilos para o Modal -->
     <style>
-    .modal {
+    .modal2 {
         display: none; 
         position: fixed; 
         z-index: 1; 
@@ -186,7 +186,7 @@
 
                 <div class="container-fluid">
                 <!-- Page Heading -->
-                    <div id="myModal" class="modal">
+                    <div id="myModal" class="modal2">
                         <div class="modal-cont">
                             <span class="close">&times;</span>
                             <p id="modalText">Alguma mensagem aqui...</p>

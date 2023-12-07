@@ -20,6 +20,7 @@ O RESERVANDO é projetado para melhorar a experiência do cliente em restaurante
 - **Backend**: PHP
 - **Análise de Código**: PHPStan para garantir a qualidade do código PHP
 - **Monitoramento de Desempenho**: New Relic para observabilidade e monitoramento em tempo real
+- **Integração (CI/CD)**: Este projeto utiliza o GitHub Actions para automatizar a Integração Contínua e a Implantação Contínua (CI/CD)
 - **Database**: MySQL no AWS RDS
 - **Servidor**: Arquivos no AWS EC2 em um servidor Ubuntu
 

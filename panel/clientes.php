@@ -208,9 +208,9 @@
                                             <th>Nomes</th>
                                             <th>Apelidos</th>
                                             <th>N° Documento</th>
-                                            <th>Fecha Nacimiento</th>
+                                            <th>Data Nascimento</th>
                                             <th>Celular</th>
-                                            <th>Correo</th>
+                                            <th>E-mail</th>
                                             <th>Pontos</th>
                                             <th>Validar Brinde</th> <!-- Novo cabeçalho da coluna -->
                                         </tr>
